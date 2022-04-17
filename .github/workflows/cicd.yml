@@ -18,12 +18,14 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
-        with: 
-          path: repo-name-${{ github.run_id }}-${{ github.run_number }} 
+#         with: 
+#           clean: true
+#           lfs: true
+#           path: repo-name-${{ github.run_id }}-${{ github.run_number }} 
 #         path: "/home/daryn/cicdpathtest/"
       # Runs a single command using the runners shell
-      - name: Run a one-line script -- ${{ github.run_id }}
-        run: ls -al
+      - name: copy files
+        run: cp -r * /home/daryn/cicdpathtest/
 
 #   path: repo-name-${{ github.run_id }}-${{ github.run_number }}
 
