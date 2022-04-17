@@ -25,7 +25,7 @@ jobs:
 #         path: "/home/daryn/cicdpathtest/"
       # Runs a single command using the runners shell
       - name: copy files
-        run: cp -r * /home/daryn/cicdpathtest/
+        run: rsync -av * /home/daryn/sites/cicdpathtest/ --exclude node_modules
 
 #   path: repo-name-${{ github.run_id }}-${{ github.run_number }}
 
