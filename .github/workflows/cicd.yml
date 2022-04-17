@@ -17,10 +17,14 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
+      - name: repo-name-${{ github.run_id }}
       - uses: actions/checkout@v3
-        with: 
-          path: "/home/daryn/cicdpathtest/"
+#        with: 
+#          path: "/home/daryn/cicdpathtest/"
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: ls -al
 
+#   path: repo-name-${{ github.run_id }}-${{ github.run_number }}
+
+#  - run: mv repo-name-${{ github.run_id }}-${{ github.run_number }} ../repo-name
