@@ -1,12 +1,12 @@
 # This is a basic workflow to help you get started with Actions
 
-name: cicdpathtest
+name: cicdQA
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ dev ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,8 +24,8 @@ jobs:
 #           path: repo-name-${{ github.run_id }}-${{ github.run_number }} 
 #         path: "/home/daryn/cicdpathtest/"
       # Runs a single command using the runners shell
-      - name: copy files
-        run: rsync -av * /home/daryn/sites/cicdpathtest/ --exclude node_modules
+      - name: sync files to QA...
+        run: rsync -av * /home/daryn/sites/cicdQA/ --exclude node_modules
 
 #   path: repo-name-${{ github.run_id }}-${{ github.run_number }}
 
